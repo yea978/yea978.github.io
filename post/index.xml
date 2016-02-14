@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on yea978</title>
+    <link>yea978.github.io/post/</link>
+    <description>Recent content in Posts on yea978</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0800</lastBuildDate>
+    <atom:link href="yea978.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HUGO主题结构，页面与模板对应关系</title>
+      <link>/yea978.github.io/post/programl/hugo_theme_structure/</link>
+      <pubDate>Sun, 14 Feb 2016 00:00:00 +0800</pubDate>
+      
+      <guid>/yea978.github.io/post/programl/hugo_theme_structure/</guid>
+      <description>
+
+&lt;p&gt;简单修改了一下Slender这个Hugo主题，主要添加了分类的页面，在此记录一下相关模板及最后生成页面的对应关系：&lt;/p&gt;
+
+&lt;p&gt;涉及模板：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;首页模板&lt;/li&gt;
+&lt;li&gt;单一内容模板&lt;/li&gt;
+&lt;li&gt;内容列表模板&lt;/li&gt;
+&lt;li&gt;分类模板&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;原始主题：&lt;a href=&#34;http://crimsonray.github.io/slender/&#34;&gt;Slender&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;参考主题：&lt;a href=&#34;https://github.com/spf13/spf13.com&#34;&gt;spf13&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;生成静态页面之后，网站的结构如下：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;C:.
+├─1
+├─about                                       单一内容页
+├─page
+├─post                                        内容列表页
+│  └─programl
+│      └─hugo_theme_structure                单一内容页
+├─static
+│  ├─assets
+│  ├─css
+│  ├─fonts
+│  └─js
+├─tags                                        分类：tag
+│  └─hugo                                    Taxonomy列表：tag页
+├─topics                                      分类：topic
+│  └─programing-language	                Taxonomy列表：topic页
+└─index.html                                  首页
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;layout目录结构：&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;pre&gt;&lt;code&gt;C:.
+├─partials
+├─taxonomy
+│  ├─category.html                             Taxonomy列表模板
+│  └─tag.html                                  Taxonomy列表模板
+├─_default
+│  ├─section.html                              Section列表模板
+│  ├─single.html                               单一内容模板
+│  └─terms.html                                分类模板
+└─index.html                                    首页模板
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;首页模板:4c8dc447f4e6eb7f7697a99ffa568033&#34;&gt;首页模板:&lt;/h2&gt;
+
+&lt;p&gt;按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/index.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/single.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;单一内容模板:4c8dc447f4e6eb7f7697a99ffa568033&#34;&gt;单一内容模板：&lt;/h2&gt;
+
+&lt;p&gt;Hugo中内容的最主要视图就是单一视图，每一个Markdown文件都会通过单一的模板来渲染。&lt;/p&gt;
+
+&lt;p&gt;按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/&lt;strong&gt;TYPE&lt;/strong&gt;-or-&lt;strong&gt;SECTION&lt;/strong&gt;/LAYOUT.html&lt;/li&gt;
+&lt;li&gt;/layouts/&lt;strong&gt;TYPE&lt;/strong&gt;-or-&lt;strong&gt;SECTION&lt;/strong&gt;/single.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/single.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;内容列表模板:4c8dc447f4e6eb7f7697a99ffa568033&#34;&gt;内容列表模板：&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Section列表&lt;/strong&gt;  如上面的post&lt;/p&gt;
+
+&lt;p&gt;按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/section/&lt;strong&gt;SECTION&lt;/strong&gt;.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/section.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Taxonomy列表&lt;/strong&gt; 如上面的hugo&lt;/p&gt;
+
+&lt;p&gt;按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/taxonomy/&lt;strong&gt;SINGULAR&lt;/strong&gt;.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/taxonomy.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/list.html&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;分类模板:4c8dc447f4e6eb7f7697a99ffa568033&#34;&gt;分类模板：&lt;/h2&gt;
+
+&lt;p&gt;按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;/layouts/taxonomy/&lt;strong&gt;SINGULAR&lt;/strong&gt;.terms.html&lt;/li&gt;
+&lt;li&gt;/layouts/_default/terms.html&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

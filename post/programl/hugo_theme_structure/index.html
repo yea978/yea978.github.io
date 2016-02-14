@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:title" content="HUGO主题结构，页面与模板对应关系 &middot; yea978 ">
+        <meta property="og:site_name" content="yea978"/>
+        <meta property="og:description" content="Default Page Description">
+        <meta property="og:url" content="/yea978.github.io/post/programl/hugo_theme_structure/" />
+        <meta property="og:locale" content="en-US">
+        <meta name="author" content="yea978">
+        <meta name="description" content="Default Page Description">
+        <meta name="keywords" content="default,page,keywords">
+        <meta name="generator" content="Hugo 0.15" />
+        <link rel="icon" href="yea978.github.io/static/assets/favicon.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="yea978.github.io/static/css/slender-base.css">
+        <link rel="stylesheet" href="yea978.github.io/static/css/slender-color-schemes.css">
+        <link rel="stylesheet" href="yea978.github.io/static/css/font-awesome-4.5.0.min.css">
+        <link rel="stylesheet" href="yea978.github.io/static/css/highlight-9.0.0-default.min.css">
+        <title>
+            
+                HUGO主题结构，页面与模板对应关系 &middot; yea978
+            
+        </title>
+    </head>
+    <body class="color-scheme-white">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul><li><a href="yea978.github.io/yea978.github.io/"><i class='fa fa-home'></i>home</a></li><li><a href="yea978.github.io/yea978.github.io/post/"><i class='fa fa-folder '></i>post</a></li><li><a href="yea978.github.io/yea978.github.io/about/"><i class='fa fa-leaf'></i>about</a></li></ul>
+                </nav>
+                
+                    <h1 class="title">HUGO主题结构，页面与模板对应关系</h1>
+                    <aside>
+                        <p>on <strong>Sun, Feb 14, 2016</strong></p>
+                    </aside>
+                
+            </header>
+<article class="article-content">
+    
+
+<p>简单修改了一下Slender这个Hugo主题，主要添加了分类的页面，在此记录一下相关模板及最后生成页面的对应关系：</p>
+
+<p>涉及模板：</p>
+
+<ul>
+<li>首页模板</li>
+<li>单一内容模板</li>
+<li>内容列表模板</li>
+<li>分类模板</li>
+</ul>
+
+<p>原始主题：<a href="http://crimsonray.github.io/slender/">Slender</a></p>
+
+<p>参考主题：<a href="https://github.com/spf13/spf13.com">spf13</a></p>
+
+<p>生成静态页面之后，网站的结构如下：</p>
+
+<blockquote>
+<pre><code>C:.
+├─1
+├─about                                       单一内容页
+├─page
+├─post                                        内容列表页
+│  └─programl
+│      └─hugo_theme_structure                单一内容页
+├─static
+│  ├─assets
+│  ├─css
+│  ├─fonts
+│  └─js
+├─tags                                        分类：tag
+│  └─hugo                                    Taxonomy列表：tag页
+├─topics                                      分类：topic
+│  └─programing-language	                Taxonomy列表：topic页
+└─index.html                                  首页
+</code></pre>
+</blockquote>
+
+<p>layout目录结构：</p>
+
+<blockquote>
+<pre><code>C:.
+├─partials
+├─taxonomy
+│  ├─category.html                             Taxonomy列表模板
+│  └─tag.html                                  Taxonomy列表模板
+├─_default
+│  ├─section.html                              Section列表模板
+│  ├─single.html                               单一内容模板
+│  └─terms.html                                分类模板
+└─index.html                                    首页模板
+</code></pre>
+</blockquote>
+
+<h2 id="首页模板:4c8dc447f4e6eb7f7697a99ffa568033">首页模板:</h2>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/index.html</li>
+<li>/layouts/_default/list.html</li>
+<li>/layouts/_default/single.html</li>
+</ul>
+
+<h2 id="单一内容模板:4c8dc447f4e6eb7f7697a99ffa568033">单一内容模板：</h2>
+
+<p>Hugo中内容的最主要视图就是单一视图，每一个Markdown文件都会通过单一的模板来渲染。</p>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/<strong>TYPE</strong>-or-<strong>SECTION</strong>/LAYOUT.html</li>
+<li>/layouts/<strong>TYPE</strong>-or-<strong>SECTION</strong>/single.html</li>
+<li>/layouts/_default/single.html</li>
+</ul>
+
+<h2 id="内容列表模板:4c8dc447f4e6eb7f7697a99ffa568033">内容列表模板：</h2>
+
+<p><strong>Section列表</strong>  如上面的post</p>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/section/<strong>SECTION</strong>.html</li>
+<li>/layouts/_default/section.html</li>
+<li>/layouts/_default/list.html</li>
+</ul>
+
+<p><strong>Taxonomy列表</strong> 如上面的hugo</p>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/taxonomy/<strong>SINGULAR</strong>.html</li>
+<li>/layouts/_default/taxonomy.html</li>
+<li>/layouts/_default/list.html</li>
+</ul>
+
+<h2 id="分类模板:4c8dc447f4e6eb7f7697a99ffa568033">分类模板：</h2>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/taxonomy/<strong>SINGULAR</strong>.terms.html</li>
+<li>/layouts/_default/terms.html</li>
+</ul>
+
+</article>
+        </div>
+        <footer>
+            <p>Copyright 2016 &copy; Yea978</p>
+        </footer>
+        <script src="yea978.github.io/js/highlight-9.0.0.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-73711103-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        
+    </body>
+</html>
