@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="description" content="">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="keywords" content="HUGO, ">
+
+ 
+<meta property="og:type" content="article"/>
+<meta property="og:description" content=""/>
+<meta property="og:title" content="HUGO主题结构，页面与模板对应关系 : spf13.com"/>
+<meta property="og:site_name" content="spf13 is Steve Francia"/>
+<meta property="og:image" content="" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="" />
+<meta property="og:image:height" content="" />
+<meta property="og:url" content="http://yea978.github.io/post/hugo_theme_structure/">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-02-14"/>
+<meta property="article:modified_time" content="2016-02-14"/>
+
+
+
+<meta property="article:tag" content="HUGO">
+
+
+
+
+<meta name="twitter:card" content="summary">
+
+<meta name="twitter:site" content="@spf13">
+<meta name="twitter:title" content="HUGO主题结构，页面与模板对应关系 : spf13.com">
+<meta name="twitter:creator" content="@spf13">
+<meta name="twitter:description" content="">
+<meta name="twitter:image:src" content="">
+<meta name="twitter:domain" content="spf13.com">
+
+
+
+    <base href="http://yea978.github.io/">
+    <title> HUGO主题结构，页面与模板对应关系 - yea978.github.io </title>
+    <link rel="canonical" href="http://yea978.github.io/post/hugo_theme_structure/">
+    
+
+    
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/static/css/font-awesome-4.5.0.min.css">
+<link rel="stylesheet" href="/static/css/style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+
+<body lang="en" itemscope itemtype="http://schema.org/Article">
+<header id="header">
+    <figure>
+      
+      <a href="/" border=0 id="logolink"><div class="icon-yea978-1" id="logo"></div></a>
+    </figure>
+    <div id="byline">Thorn twisting.</div>
+    <nav id="nav">
+            <ul id="mainnav">
+            <li>
+                <a href="/post/">
+                <span class="icon"> <i aria-hidden="true" class="fa fa-cogs"></i></span>
+                <span> blog </span>
+            </a>
+            </li>
+            <li>
+            <a href="/topics/">
+                <span class="icon"> <i aria-hidden="true" class="fa fa-modx"></i></span>
+                <span> category </span>
+            </a>
+            </li>
+            <li>
+            <a href="/about/">
+                <span class="icon"> <i aria-hidden="true" class="fa fa-user-secret"></i></span>
+                <span> me </span>
+            </a>
+            </li>
+        </ul>
+
+            <ul id="social">
+            
+            
+        </ul>
+
+    </nav>
+</header>
+
+
+<section id="main">
+  <h1 itemprop="name" id="title">HUGO主题结构，页面与模板对应关系</h1>
+  <div>
+        <article itemprop="articleBody" id="content">
+           
+
+<p>简单修改了一下Slender这个Hugo主题，主要添加了分类的页面，在此记录一下相关模板及最后生成页面的对应关系：</p>
+
+<p>涉及模板：</p>
+
+<ul>
+<li>首页模板</li>
+<li>单一内容模板</li>
+<li>内容列表模板</li>
+<li>分类模板</li>
+</ul>
+
+<p>原始主题：<a href="http://crimsonray.github.io/slender/">Slender</a></p>
+
+<p>参考主题：<a href="https://github.com/spf13/spf13.com">spf13</a></p>
+
+<p>生成静态页面之后，网站的结构如下：</p>
+
+<pre><code>C:.
+├─1
+├─about                                       单一内容页
+├─page
+├─post                                        内容列表页
+│  └─programl
+│      └─hugo_theme_structure                单一内容页
+├─static
+│  ├─assets
+│  ├─css
+│  ├─fonts
+│  └─js
+├─tags                                        分类：tag
+│  └─hugo                                    Taxonomy列表：tag页
+├─topics                                      分类：topic
+│  └─programing-language	                Taxonomy列表：topic页
+└─index.html                                  首页
+</code></pre>
+
+<p>layout目录结构：</p>
+
+<pre><code>C:.
+├─partials
+├─taxonomy
+│  ├─category.html                             Taxonomy列表模板
+│  └─tag.html                                  Taxonomy列表模板
+├─_default
+│  ├─section.html                              Section列表模板
+│  ├─single.html                               单一内容模板
+│  └─terms.html                                分类模板
+└─index.html                                    首页模板
+</code></pre>
+
+<h2 id="首页模板:4c8dc447f4e6eb7f7697a99ffa568033">首页模板:</h2>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/index.html</li>
+<li>/layouts/_default/list.html</li>
+<li>/layouts/_default/single.html</li>
+</ul>
+
+<h2 id="单一内容模板:4c8dc447f4e6eb7f7697a99ffa568033">单一内容模板：</h2>
+
+<p>Hugo中内容的最主要视图就是单一视图，每一个Markdown文件都会通过单一的模板来渲染。</p>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/<strong>TYPE</strong>-or-<strong>SECTION</strong>/LAYOUT.html</li>
+<li>/layouts/<strong>TYPE</strong>-or-<strong>SECTION</strong>/single.html</li>
+<li>/layouts/_default/single.html</li>
+</ul>
+
+<h2 id="内容列表模板:4c8dc447f4e6eb7f7697a99ffa568033">内容列表模板：</h2>
+
+<p><strong>Section列表</strong>  如上面的post</p>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/section/<strong>SECTION</strong>.html</li>
+<li>/layouts/_default/section.html</li>
+<li>/layouts/_default/list.html</li>
+</ul>
+
+<p><strong>Taxonomy列表</strong> 如上面的hugo</p>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/taxonomy/<strong>SINGULAR</strong>.html</li>
+<li>/layouts/_default/taxonomy.html</li>
+<li>/layouts/_default/list.html</li>
+</ul>
+
+<h2 id="分类模板:4c8dc447f4e6eb7f7697a99ffa568033">分类模板：</h2>
+
+<p>按照以下顺序，首先检查源目录，再检查主题目录，获取模板生成页面：</p>
+
+<ul>
+<li>/layouts/taxonomy/<strong>SINGULAR</strong>.terms.html</li>
+<li>/layouts/_default/terms.html</li>
+</ul>
+
+        </article>
+  </div>
+</section>
+
+
+
+<aside id="meta">
+
+    <div>
+        <section id="datecount">
+          <h4 id="date"> Sun Feb 14, 2016 </h4>
+          <h5 id="wc"> 100 Words </h5>
+          <h5 id="readtime"> Read in about 1 Min </h5>
+        </section>
+        <ul id="categories">
+          
+            <li><a href="http://yea978.github.io//topics/hugo-theme">Hugo Theme</a> </li>
+          
+        </ul>
+        <ul id="tags">
+          
+            <li> <a href="http://yea978.github.io//tags/hugo">HUGO</a> </li>
+          
+        </ul>
+    </div>
+
+    <div>
+        <section id="prev">
+            &nbsp;
+        </section><section id="next">
+            &nbsp;
+        </section>
+    </div>
+
+    
+
+</aside>
+
+<meta itemprop="wordCount" content="92">
+<meta itemprop="datePublished" content="2016-02-14">
+<meta itemprop="url" content="http://yea978.github.io/post/hugo_theme_structure/">
+
+
+<aside id=comments>
+    <div><h2> Comments </h2></div>
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'yea978';
+    var disqus_identifier = 'http:\/\/yea978.github.io\/post\/hugo_theme_structure\/';
+    var disqus_title = 'HUGO主题结构，页面与模板对应关系';
+    var disqus_url = 'http:\/\/yea978.github.io\/post\/hugo_theme_structure\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</aside>
+
+<footer>
+  <div>
+    <p>
+    &copy; 2016 <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">yea978.</span></span>
+    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons Attribution">Some rights reserved</a>; 
+    please attribute properly and link back. <br>
+    </p>
+  </div>
+</footer>
+<script type="text/javascript">
+(function(){var j=function(a,b){return window.getComputedStyle?getComputedStyle(a).getPropertyValue(b):a.currentStyle[b]};var k=function(a,b,c){if(a.addEventListener)a.addEventListener(b,c,false);else a.attachEvent('on'+b,c)};var l=function(a,b){for(key in b)if(b.hasOwnProperty(key))a[key]=b[key];return a};window.fitText=function(d,e,f){var g=l({'minFontSize':-1/0,'maxFontSize':1/0},f);var h=function(a){var b=e||1;var c=function(){a.style.fontSize=Math.max(Math.min(a.clientWidth/(b*10),parseFloat(g.maxFontSize)),parseFloat(g.minFontSize))+'px'};c();k(window,'resize',c)};if(d.length)for(var i=0;i<d.length;i++)h(d[i]);else h(d);return d}})();
+fitText(document.getElementById('title'), 1)
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-73711103-1', 'yea978.github.io');
+  ga('require', 'linkid', 'linkid.js');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+

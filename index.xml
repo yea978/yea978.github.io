@@ -1,30 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>yea978</title>
-    <link>https://yea978.github.io/</link>
-    <description>Recent content on yea978</description>
+    <title>thorn twisting</title>
+    <link>http://yea978.github.io/</link>
+    <description>Recent content on thorn twisting</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yea978.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>about</title>
-      <link>https://yea978.github.io/about/</link>
-      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://yea978.github.io/about/</guid>
-      <description>&lt;p&gt;Yea978&amp;rsquo;s website.&lt;/p&gt;
-</description>
-    </item>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2015 - 2016, Yea978; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0800</lastBuildDate>
+    <atom:link href="http://yea978.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>HUGO主题结构，页面与模板对应关系</title>
-      <link>https://yea978.github.io/post/programl/hugo_theme_structure/</link>
+      <link>http://yea978.github.io/post/hugo_theme_structure/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0800</pubDate>
       
-      <guid>https://yea978.github.io/post/programl/hugo_theme_structure/</guid>
+      <guid>http://yea978.github.io/post/hugo_theme_structure/</guid>
       <description>
 
 &lt;p&gt;简单修改了一下Slender这个Hugo主题，主要添加了分类的页面，在此记录一下相关模板及最后生成页面的对应关系：&lt;/p&gt;
@@ -44,7 +35,6 @@
 
 &lt;p&gt;生成静态页面之后，网站的结构如下：&lt;/p&gt;
 
-&lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;C:.
 ├─1
 ├─about                                       单一内容页
@@ -63,11 +53,9 @@
 │  └─programing-language	                Taxonomy列表：topic页
 └─index.html                                  首页
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
 
 &lt;p&gt;layout目录结构：&lt;/p&gt;
 
-&lt;blockquote&gt;
 &lt;pre&gt;&lt;code&gt;C:.
 ├─partials
 ├─taxonomy
@@ -79,7 +67,6 @@
 │  └─terms.html                                分类模板
 └─index.html                                    首页模板
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;首页模板:4c8dc447f4e6eb7f7697a99ffa568033&#34;&gt;首页模板:&lt;/h2&gt;
 
@@ -133,6 +120,25 @@
 &lt;li&gt;/layouts/taxonomy/&lt;strong&gt;SINGULAR&lt;/strong&gt;.terms.html&lt;/li&gt;
 &lt;li&gt;/layouts/_default/terms.html&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ABOUT</title>
+      <link>http://yea978.github.io/about/</link>
+      <pubDate>Sat, 01 Jan 2000 00:00:00 +0800</pubDate>
+      
+      <guid>http://yea978.github.io/about/</guid>
+      <description>&lt;p&gt;
+&lt;figure class=&#34;third right&#34;&gt;
+    
+        &lt;img src=&#34;http://yea978.github.io/media/yea978.png&#34; alt=&#34;Yea978&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+Yea978&amp;rsquo;s website.&lt;/p&gt;
 </description>
     </item>
     

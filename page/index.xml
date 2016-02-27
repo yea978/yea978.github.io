@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pages on yea978</title>
-    <link>https://yea978.github.io/page/</link>
-    <description>Recent content in Pages on yea978</description>
+    <title>Pages on thorn twisting</title>
+    <link>http://yea978.github.io/page/</link>
+    <description>Recent content in Pages on thorn twisting</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://yea978.github.io/page/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>Copyright (c) 2015 - 2016, Yea978; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 01 Jan 2000 00:00:00 +0800</lastBuildDate>
+    <atom:link href="http://yea978.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>about</title>
-      <link>https://yea978.github.io/about/</link>
-      <pubDate>Sun, 14 Feb 2016 00:00:00 +0000</pubDate>
+      <title>ABOUT</title>
+      <link>http://yea978.github.io/about/</link>
+      <pubDate>Sat, 01 Jan 2000 00:00:00 +0800</pubDate>
       
-      <guid>https://yea978.github.io/about/</guid>
-      <description>&lt;p&gt;Yea978&amp;rsquo;s website.&lt;/p&gt;
+      <guid>http://yea978.github.io/about/</guid>
+      <description>&lt;p&gt;
+&lt;figure class=&#34;third right&#34;&gt;
+    
+        &lt;img src=&#34;http://yea978.github.io/media/yea978.png&#34; alt=&#34;Yea978&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+Yea978&amp;rsquo;s website.&lt;/p&gt;
 </description>
     </item>
     
