@@ -11,14 +11,14 @@
     <atom:link href="http://yea978.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>HUGO主题结构，页面与模板对应关系</title>
+      <title>HUGO主题结构</title>
       <link>http://yea978.github.io/post/hugo_theme_structure/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0800</pubDate>
       
       <guid>http://yea978.github.io/post/hugo_theme_structure/</guid>
       <description>
 
-&lt;p&gt;简单修改了一下Slender这个Hugo主题，主要添加了分类的页面，在此记录一下相关模板及最后生成页面的对应关系：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;初次使用Hugo，记录一下相关模板及最后生成页面的对应关系：&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;涉及模板：&lt;/p&gt;
 
@@ -29,9 +29,9 @@
 &lt;li&gt;分类模板&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;原始主题：&lt;a href=&#34;http://crimsonray.github.io/slender/&#34;&gt;Slender&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原始主题：&lt;a href=&#34;http://crimsonray.github.io/slender/&#34; title=&#34;http://crimsonray.github.io/slender/&#34;&gt;Slender&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;参考主题：&lt;a href=&#34;https://github.com/spf13/spf13.com&#34;&gt;spf13&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考主题： &lt;a href=&#34;https://github.com/spf13/spf13.com/&#34; title=&#34;https://github.com/spf13/spf13.com/&#34;&gt;Spf13&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;生成静态页面之后，网站的结构如下：&lt;/p&gt;
 

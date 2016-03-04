@@ -7,18 +7,95 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Copyright (c) 2015 - 2016, Yea978; all rights reserved.</copyright>
-    <lastBuildDate>Sun, 14 Feb 2016 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 01 Mar 2016 00:00:00 +0800</lastBuildDate>
     <atom:link href="http://yea978.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>HUGO主题结构，页面与模板对应关系</title>
+      <title>字符图标的使用</title>
+      <link>http://yea978.github.io/post/icon_font/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0800</pubDate>
+      
+      <guid>http://yea978.github.io/post/icon_font/</guid>
+      <description>
+
+&lt;p&gt;
+&lt;figure class=&#34;third right hid&#34;&gt;
+    
+        &lt;img src=&#34;http://yea978.github.io/media/iconfont-ycon.png&#34; alt=&#34;logo&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+在网页中展示图片,除了引用图片文件外,还可以通过使用字符图标达到类似的效果.&lt;br /&gt;
+通过将图标存储为字体,可以很容易的进行缩放,改变颜色,通过CSS装饰.&lt;br /&gt;
+记录一下使用css引用字符图标的相关方法.&lt;/p&gt;
+
+&lt;h2 id=&#34;使用公开的图标库-如-font-awesome-1:25f474a61abb014ab5e50fd35c0fee24&#34;&gt;&lt;strong&gt;使用公开的图标库 如&lt;a href=&#34;http://fortawesome.github.io/&#34; title=&#34;http://fortawesome.github.io/&#34;&gt;Font awesome&lt;/a&gt;&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;下载对应的字体和css文件,放到static目录下&lt;br /&gt;
+引用font-awesome-4.5.0.min.css&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;/static/css/font-awesome-4.5.0.min.css&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;想要使用图标时,首先找到对应的类名,然后在模板中插入,如&lt;i aria-hidden=&#34;true&#34; class=&#34;fa fa-modx&#34;&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;i aria-hidden=&amp;quot;true&amp;quot; class=&amp;quot;fa fa-modx&amp;quot;&amp;gt;&amp;lt;/i&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;使用-iconfont平台-2-管理和制作个人图标库:25f474a61abb014ab5e50fd35c0fee24&#34;&gt;&lt;strong&gt;使用&lt;a href=&#34;http://www.iconfont.cn/&#34; title=&#34;http://www.iconfont.cn/&#34;&gt;iconfont平台&lt;/a&gt;管理和制作个人图标库&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;首先在AI中制作好图标,然后根据说明导出SVG文件上传至平台&lt;br /&gt;
+引用上传的图标,创建新项目,然后下载字体文件到本地static目录&lt;br /&gt;
+参考Demo创建相关的css文件并引用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@font-face {
+	font-family: &#39;yea978-1&#39;;
+	src:url(&#39;../fonts/yea978-1.eot&#39;);
+	src:url(&#39;../fonts/yea978-1.eot?#iefix&#39;) format(&#39;embedded-opentype&#39;),
+		url(&#39;../fonts/yea978-1.woff&#39;) format(&#39;woff&#39;),
+		url(&#39;../fonts/yea978-1.ttf&#39;) format(&#39;truetype&#39;),
+		url(&#39;../fonts/yea978-1.svg#yea978-1&#39;) format(&#39;svg&#39;);
+	font-weight: normal;
+	font-style: normal;
+}
+.icon-yea978-1 {
+	font-family: &#39;yea978-1&#39;;
+    font-size:15em;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-yea978-1:before {
+	content: &amp;quot;\e600&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;使用自己的图标在模板中替换原图标&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&amp;quot;icon-yea978-1&amp;quot; id=&amp;quot;logo&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HUGO主题结构</title>
       <link>http://yea978.github.io/post/hugo_theme_structure/</link>
       <pubDate>Sun, 14 Feb 2016 00:00:00 +0800</pubDate>
       
       <guid>http://yea978.github.io/post/hugo_theme_structure/</guid>
       <description>
 
-&lt;p&gt;简单修改了一下Slender这个Hugo主题，主要添加了分类的页面，在此记录一下相关模板及最后生成页面的对应关系：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;初次使用Hugo，记录一下相关模板及最后生成页面的对应关系：&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;涉及模板：&lt;/p&gt;
 
@@ -29,9 +106,9 @@
 &lt;li&gt;分类模板&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;原始主题：&lt;a href=&#34;http://crimsonray.github.io/slender/&#34;&gt;Slender&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;原始主题：&lt;a href=&#34;http://crimsonray.github.io/slender/&#34; title=&#34;http://crimsonray.github.io/slender/&#34;&gt;Slender&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;参考主题：&lt;a href=&#34;https://github.com/spf13/spf13.com&#34;&gt;spf13&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考主题： &lt;a href=&#34;https://github.com/spf13/spf13.com/&#34; title=&#34;https://github.com/spf13/spf13.com/&#34;&gt;Spf13&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;生成静态页面之后，网站的结构如下：&lt;/p&gt;
 
